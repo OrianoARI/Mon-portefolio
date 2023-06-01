@@ -1,0 +1,55 @@
+
+
+
+/*----------------------------------------------------------------loading circles*/
+
+.loading-circle {
+    position: relative;
+    text-align: center;
+    margin: auto;
+    width: 100px;
+    height: 100px;
+}
+
+.loading-circle p {
+    position: absolute;
+    color: red;
+    text-shadow: 2px 2px 2px rgba(255, 0, 0, 0.537);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    top: 25%;
+    left: 25%;
+}
+
+#circleTwo {
+    position: absolute;
+    top: -5%;
+    left: 5%;
+    margin-top: 10px;
+
+
+}
+
+#circleOne {
+    position: absolute;
+    top: -5%;
+    left: -5%;
+
+
+}
+
+.loading-circle:hover {
+    transition: 1000ms;
+    transform: scale(1.1, 1.1);
+}
+
+/* #circle-one:hover {
+    transition: 1000ms;
+    transform-origin: (center,center);
+    transform : rotate(20deg) ;
+}
+
+#circle-two:hover {
+    transition: 1000ms;
+    transform-origin: (center,center);
+    transform : rotate(-20deg) ;
+} */

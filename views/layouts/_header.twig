@@ -1,0 +1,38 @@
+<header>
+<div class="hidden"></div>
+	<div class="responsive">
+		<div class="menu-container">
+			<div class="side-menu">
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="#">CV</a></li>
+					<li><a href="#">Projets</a></li>
+				</ul>
+			</div>
+			<div id="menuBurger" class="closed">
+				<span class="burger" id="burgerOne"></span>
+				<span class="burger" id="burgerTwo"></span>
+				<span class="burger" id="burgerThree"></span>
+			</div>
+		</div>
+	</div>
+
+	<div class="nav">
+		<ul>
+			<li>
+				<a href="/">Home</a>
+			</li>
+			<li>
+				<a href="#">CV</a>
+			</li>
+			<li>
+				<a href="/projects">Projets</a>
+			</li>
+			{# {% if admin.userId %} #}
+				<li>
+					<a href="/dashboard">Dashboard</a>
+				</li>
+			{# {% endif %} #}
+		</ul>
+	</div>
+</div></header>

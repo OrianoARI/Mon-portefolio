@@ -1,0 +1,99 @@
+{% extends "base.twig" %}
+{% block link %}
+	<link rel="stylesheet" href="/css/admin_style.css">
+{% endblock %}
+
+{% block head %}
+	<title>Dashboard</title>
+{% endblock %}
+{% block form %}
+	<h2>{% if project %}Modifier un projet{% else %}Ajouter  un nouveau projet{% endif %}</h2>
+	<div class="form">
+		<form {% if project %} action="/updateProject/{{project.id}}"{% else %} action="/addProject" {% endif %} method="post" enctype="multipart/form-data">
+			<input type="text" name="title" id="title" placeholder="Titre du projet" {% if project %} value="{{project.title}}" {% endif %}>
+			<input type="text" name="url" id="url" placeholder="Url du projet" {% if project %} value="{{project.url}}" {% endif %}>
+			<input type="text" name="gitUrl" id="gitUrl" placeholder="Url GitHub du projet" {% if project %} value="{{project.gitUrl}}" {% endif %}>
+			<input type="text" name="description" id="description" placeholder="Description du projet" {% if project %} value="{{project.description}}" {% endif %}>
+            <input type="text" name="techOne" id="techOne" placeholder="Techno utilisée" {% if project %} value="{{project.techOne}}" {% endif %}>
+            <input type="text" name="techTwo" id="techTwo" placeholder="Techno utilisée" {% if project %} value="{{project.techTwo}}" {% endif %}>
+            <input type="text" name="techThree" id="techThree" placeholder="Techno utilisée" {% if project %} value="{{project.techThree}}" {% endif %}>
+            <input type="text" name="techFour" id="techFour" placeholder="Techno utilisée" {% if project %} value="{{project.techFour}}" {% endif %}>
+			<input type="file" name="image" id="image" {% if project %} value="{{project.image}}" {% endif %}>
+			<div class="button-bar">
+				<button class="btn" type="submit" id="submitBtn">{% if project %}Modifier{% else %}Ajouter{% endif %}</button>
+                {% if project %}<button class="btn" type="button" id="cancelBtn">Annuler</button>{% else %}<button class="btn" type="reset">Effacer</button>{% endif %}		
+			</div>
+		</form>
+	</div>
+{% endblock %}
+{% block main %}
+	<div {% if project %} class= "invisible" {% else %} class="bilboard"{% endif %}>
+		<table>
+			<thead>
+				<tr class="title">
+					<th>Titre</th>
+					<th>URL</th>
+					<th>URL Git</th>
+					<th>Date</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for project in projects %}
+					<tr class="project-container">
+						<td>
+							<div class="project">
+								<p class="text">{{project.title}}</p>
+								<p class="text">{{project.url}}</p>
+								<p class="text">{{project.gitUrl}}</p>
+								<p class="text date">{{project.date}}</p>
+							</div>
+						</td>
+						<td>
+							<div class="button-bar">
+								<button id="update" type="button">
+									<a href="updateProject/{{project.id}}">Update</a>
+								</button>
+								<button id="delete" type="button">
+									<a href="deleteProject/{{project.id}}">Delete</a>
+								</button>
+							</div>
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+	<script>
+		function showLetters(className) {
+const elements = document.getElementsByClassName(className);
+
+for (let i = 0; i < elements.length; i++) {
+const element = elements[i];
+const text = element.textContent;
+element.textContent = '';
+
+for (let j = 0; j < text.length; j++) {
+const letter = document.createElement('span');
+letter.className = 'letter';
+letter.textContent = text[j] === ' ' ? '\u00A0' : text[j]; // Replace les espaces par des espaces insécables;
+element.appendChild(letter);
+}
+
+const letters = element.getElementsByClassName('letter');
+let delay = 100; // Délai entre chaque lettre (100 ms dans cet exemple)
+
+for (let k = 0; k < letters.length; k++) {
+setTimeout(() => {
+letters[k].style.visibility = 'visible';
+}, delay);
+delay += 100; // Augmentez le délai pour chaque lettre (100 ms dans cet exemple)
+}
+}
+}
+
+// Appel de la fonction showLetters pour chaque élément avec la classe "text"
+showLetters('text');
+	</script>
+    {% if project %}<script src="/js/update.js"></script>{% endif %}
+{% endblock %}

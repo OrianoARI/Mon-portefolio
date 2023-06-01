@@ -1,0 +1,57 @@
+{% extends "base.twig" %}
+{% block link %}
+	<link rel="stylesheet" href="css/projects_style.css">
+{% endblock %}
+
+{% block main %}
+	<div class="carousel-body">
+		<div class="carousel">
+			<div class="carousel__scene">
+				<div class="carousel__list">
+					{% for project in projects %}
+						<div class="carousel__cell">
+							<div class="datas">
+								<p>titre: {{project.title}}</p>
+								<p>lien: {{project.url}}</p>
+								<p>lien github: {{project.gitUrl}}</p>
+							</div>
+							<div class="description">
+								<p>description: {{project.description}}</p>
+							</div>
+							<div class="tech">
+								{% for tech in [project.techOne, project.techTwo, project.techThree, project.techFour] %}
+									{% if tech == 'html' %}
+										<i class="fa-solid fa-code fa-xl" style="color: #ff5005;"></i>
+									{% elseif tech == 'css' %}
+										<i class="fa-solid fa-hashtag fa-xl" style="color: #2969ff;"></i>
+									{% elseif tech == 'js' %}
+										<i class="fa-brands fa-js fa-xl" style="color: #ffe229;"></i>
+									{% elseif tech == 'php' %}
+										<i class="fa-brands fa-php fa-xl" style="color: #8b2acb;"></i>
+									{% else %}
+										<p>{{ tech }}</p>
+									{% endif %}
+								{% endfor %}
+								{# <p>{{project.techOne}}</p>
+																																																								<p>{{project.techTwo}}</p>
+																																																								<p>{{project.techThree}}</p>
+																																																								<p>{{project.techFour}}</p> #}
+							</div>
+							<img src="/uploads/{{project.image}}">
+						</div>
+						<div>
+							<p>{{project.tech}}</p>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+			{# <div class="carousel__controls">
+																									<button class="previous-button">&#x1F446;&#x1F3FB;</button>
+																									<button class="next-button">&#x1F447;&#x1F3FB;</button>
+																								</div> #}
+		</div>
+	</div>
+{% endblock %}
+{% block scriptJs %}
+	<script src="/js/projects.js"></script>
+{% endblock %}

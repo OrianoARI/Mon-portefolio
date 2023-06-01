@@ -1,0 +1,334 @@
+@font-face {
+    font-family: cyberexp;
+    src: url(../fonts/CyberExpert.ttf);
+}
+
+@font-face {
+    font-family: cyberspace;
+    src: url(../fonts/cyberspace.ttf);
+}
+
+@font-face {
+    font-family: cybertech;
+    src: url(../fonts/CyberTech\ Monogram.ttf);
+}
+
+@font-face {
+    font-family: cyberway;
+    src: url(../fonts/Cyberway\ Riders.otf);
+}
+
+@font-face {
+    font-family: cybernuk;
+    src: url(../fonts/Cybrpnuk2.ttf);
+}
+
+
+
+html,
+body {
+    margin: 0;
+    background-color: black;
+
+}
+
+
+.hidden {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+}
+
+.fa-light .fa-code {
+    color: whitesmoke;
+}
+
+button {
+    color: var(--color);
+    transition: 0.25s;
+    background: none;
+    border: 2px solid;
+    line-height: 1;
+    margin: 0.5em;
+    padding: 1em 1em;
+    color: #fff6a9;
+}
+
+button a {
+    color: #fff6a9;
+    text-decoration: none;
+    font-family: cybernuk;
+}
+
+button a:hover {
+    color: #fff6a9;
+    text-decoration: none;
+    font-family: cybernuk;
+    text-shadow: 0 0 5px #b208af, 0 0 15px #b208af, 0 0 20px #b208af, 0 0 40px #b208af, 0 0 60px #ff009d, 0 0 10px #ff00d9, 0 0 98px #ff0000;
+}
+
+
+button:hover,
+button:focus {
+    border-color: var(--hover);
+    color: #fff;
+
+}
+
+.btn:hover,
+.btn:focus {
+    animation: pulse 1s;
+    box-shadow: 0 0 0 2em transparent;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 var(--hover);
+    }
+}
+
+.btn {
+    --color: #b208af;
+    --hover: #b208af;
+}
+
+
+/* =================================================================menu*/
+
+
+.menu-container {
+    display: flex;
+    position: relative;
+    left: 0;
+    align-items: start;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#menuBurger {
+    position: absolute;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 0 10px 10px 0;
+}
+
+.burger {
+    margin: 3px;
+    width: 35px;
+    height: 5px;
+    border-radius: 20px;
+    background-color: rgb(124, 0, 173);
+}
+
+
+.tburger {
+    margin: 3px;
+    width: 35px;
+    height: 5px;
+    background-color: rgb(232, 142, 54);
+}
+
+#tburgerOne {
+    transform: rotate(45deg);
+    position: absolute;
+
+}
+
+#tburgerTwo {
+    transform: rotate(45deg);
+    position: absolute;
+
+}
+
+#tburgerThree {
+    transform: rotate(135deg);
+    position: absolute;
+}
+
+.side-menu {
+    position: relative;
+    margin: 0;
+    height: 20vh;
+    display: flex;
+    text-align: center;
+    background-color: transparent;
+    left: -270px;
+}
+
+.side-menu ul {
+    padding: 5px;
+    display: flex;
+    margin: 5px;
+}
+
+.side-menu li {
+    list-style-type: none;
+    line-height: 10px;
+    margin: 10px;
+}
+
+/*================================================================*/
+
+header {
+    background-image: url("/img/city-skyline.avif");
+    background-size: contain;
+    height: 30vh;
+}
+
+
+
+.responsive {
+    display: none;
+}
+
+
+.display {
+    color: #b208af;
+}
+
+
+@media (min-width: 920px) {
+
+
+
+    header {
+        display: flex;
+        align-items: end;
+        justify-content: center;
+    }
+
+    .nav {
+        width: 100%;
+    }
+
+
+    .nav ul {
+        width: 100%;
+        display: flex;
+        margin-bottom: 0;
+        justify-content: space-around;
+        padding: 0;
+    }
+
+    .nav li {
+        list-style-type: none;
+
+    }
+
+    .nav li a {
+        text-decoration: none;
+        font-family: cyberway;
+        font-size: calc(5vh);
+        /*   text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
+              0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092;
+            color: #fccaff; */
+        text-shadow: 0 0 5px #b208af, 0 0 15px #b208af, 0 0 20px #b208af, 0 0 40px #b208af, 0 0 60px #ff009d, 0 0 10px #ff00d9, 0 0 98px #ff0000;
+        color: #fff6a9;
+        font-size: 50px;
+        animation: blink 12s infinite;
+        -webkit-animation: blink 12s infinite;
+    }
+
+    .nav li a {
+        position: relative;
+        text-decoration: none;
+        text-shadow: 0 0 5px #b208af, 0 0 15px #b208af, 0 0 20px #b208af, 0 0 40px #b208af, 0 0 60px #ff009d, 0 0 10px #ff00d9, 0 0 98px #ff0000;
+        color: #fff6a9;
+        padding: 10px 0;
+    }
+
+    .nav li a:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background: #fff6a9;
+        box-shadow: 0 0 5px #b208af, 0 0 15px #b208af, 0 0 20px #b208af, 0 0 40px #b208af, 0 0 60px #ff009d, 0 0 10px #ff00d9, 0 0 98px #ff0000;
+        transition: width 500ms ease;
+    }
+
+    .nav li a:hover:after {
+        width: 100%;
+    }
+
+
+    @-webkit-keyframes blink {
+
+        20%,
+        24%,
+        55% {
+            color: #111;
+            text-shadow: none;
+        }
+
+        0%,
+        19%,
+        21%,
+        23%,
+        25%,
+        54%,
+        56%,
+        100% {
+            text-shadow: 0 0 5px #b208af, 0 0 15px #b208af, 0 0 20px #b208af, 0 0 40px #b208af, 0 0 60px #ff009d, 0 0 10px #ff00d9, 0 0 98px #ff0000;
+            color: #fff6a9;
+        }
+    }
+
+    @keyframes blink {
+
+        20%,
+        24%,
+        55% {
+            color: #111;
+            text-shadow: none;
+        }
+
+        0%,
+        19%,
+        21%,
+        23%,
+        25%,
+        54%,
+        56%,
+        100% {
+            text-shadow: 0 0 5px #b208af, 0 0 15px #b208af, 0 0 20px #b208af, 0 0 40px #b208af, 0 0 60px #ff009d, 0 0 10px #ff00d9, 0 0 98px #ff0000;
+            color: #fff6a9;
+        }
+    }
+
+}
+
+
+
+
+
+@media (max-width: 920px) {
+
+    .nav {
+        display: none;
+    }
+
+    .responsive {
+        display: block;
+    }
+
+}
+
+@media (max-width: 470px) {
+
+    header {
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+}
