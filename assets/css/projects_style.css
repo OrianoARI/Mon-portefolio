@@ -2,46 +2,7 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-    /* display: flex;
-    flex-direction: column; */
-    /* align-items: center; */
 }
-
-/* a, a:visited, a:active {
-    color: inherit;
-} */
-/* 
-.header {
-    margin: 0.67em 0;
-    color: goldenrod;
-    background-color: #444444DD;
-    border: 3px solid goldenrod;
-    border-radius: 10px;
-    padding: 10px;
-    width: 550px;
-    max-width: 95vw;
-    z-index: 2;
-} */
-
-/* .footer {
-    color: goldenrod;
-    height: 50px;
-    line-height: 50px;
-} */
-
-/* .title {
-    font-size: 2em;
-    font-weight: bold;
-} */
-
-/* .subtitle {
-    font-size: 0.83em;
-    font-weight: bold;
-} */
-
-/* .song__title, .song__year, .song__artist {
-    display: block;
-} */
 
 .carousel-body {
     display: flex;
@@ -49,8 +10,8 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: rgb(0,0,0);
-background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(27,2,20,1) 25%, rgba(121,9,90,1) 48%, rgba(134,35,104,1) 75%, rgba(242,245,216,1) 100%);
+    background: rgb(0, 0, 0);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(27, 2, 20, 1) 25%, rgba(121, 9, 90, 1) 48%, rgba(134, 35, 104, 1) 75%, rgba(242, 245, 216, 1) 100%);
 }
 
 
@@ -62,45 +23,16 @@ background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(27,2,20,1) 25%, rgba(
 
 .carousel__scene {
     position: relative;
+    /* top: -30vh; défini dans le template twig en fonction du nombre de projets*/
     display: flex;
     justify-content: center;
     width: 720px;
     height: 800px;
     max-width: 95vw;
-    padding-top: 250px;
+    padding-top: 500px;
     perspective: 800px;
     /*overflow: hidden;*/
 }
-
-/* .carousel__controls {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 18px;
-    position: absolute;
-    right: 26px;
-} */
-
-/* .previous-button,
-.next-button {
-    margin: 5px 0;
-    padding: 5px;
-    width: 50px;
-    height: 50px;
-    font-family: monospace;
-    font-weight: bold;
-    font-size: 2rem;
-    border: 3px solid goldenrod;
-    border-radius: 10px;
-    background-color: #444;
-} */
-
-/* .previous-button:focus,
-.next-button:focus {
-    outline: none;
-    box-shadow: 0 0 6px 3px goldenrod;
-} */
 
 .carousel__list {
     width: 100%;
@@ -124,7 +56,6 @@ background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(27,2,20,1) 25%, rgba(
     left: -10%;
     top: 10px;
     border: 2px solid #7f7b58;
-    ;
     border-radius: 10px;
     font-size: 20px;
     font-weight: bold;

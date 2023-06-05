@@ -8,17 +8,19 @@ const fs = require('fs');
 //récupérer tous les projets pour les afficher sur la page publique
 projectRouter.get('/projects', async (req, res) => {
     try {
+        let projectsCounter = 0;
         let project = await projectModel.find()
+        project.forEach(elem => {
+            projectsCounter++;
+        });// récupère le nombre de projet afin d'adapter la position du carousel dans le template twig
         res.render("pages/projects.twig", {
-            projects: project
+            projects: project,
+            projectCount: projectsCounter
         });
     } catch (error) {
         res.send(error);
     }
 });
-
-
-
 
 
 //créer un nouveau projet
@@ -59,6 +61,34 @@ projectRouter.get('/updateProject/:id', async (req, res) => {
 
 //modifier un projet
 
+
+
+// projectRouter.post('/updateProject/:id', upload.single("image"), async (req, res) => {
+//     try {
+//       let projectId = req.params.id;
+//       let project = await projectModel.findById(projectId);
+
+//       project.title = req.body.title;
+//       project.url = req.body.url;
+//       project.gitUrl = req.body.gitUrl;
+//       project.description = req.body.description;
+//       project.techOne = req.body.techOne;
+//       project.techTwo = req.body.techTwo;
+//       project.techThree = req.body.techThree;
+//       project.techFour = req.body.techFour;
+
+//       if (req.file) {
+//         project.image = req.file.filename;
+//       }
+
+//       await project.save();
+
+//       res.redirect('/dashboard');
+//     } catch (error) {
+//       res.send(error);
+//     }
+//   }); alternative pour le update router
+
 projectRouter.post('/updateProject/:id', upload.single("image"), async (req, res) => {
     try {
         let timestamp = Date.now();
@@ -68,15 +98,15 @@ projectRouter.post('/updateProject/:id', upload.single("image"), async (req, res
         let day = date.getDate();
         let formattedDate = `${day}/${month}/${year}`;
         if (req.file) {
-            let project = await projectModel.findOne({ _id: req.params.id });
-            let imagePath = `./assets/uploads/${project.image}`;
+            let delImg = await projectModel.findOne({ _id: req.params.id });
+            let imagePath = `./assets/uploads/${delImg.image}`;
             if (fs.existsSync(imagePath)) {
                 fs.unlinkSync(imagePath);
             }
             req.body.image = req.file.filename;
         }
         req.body.date = formattedDate;
-        let project = await projectModel.updateOne(req.body);
+        let project = await projectModel.updateOne({ _id: req.params.id }, req.body);
         res.redirect('/dashboard');
     } catch (error) {
         console.log(error);

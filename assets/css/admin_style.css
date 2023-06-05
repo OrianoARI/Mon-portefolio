@@ -18,8 +18,9 @@ h2 {
 .container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
+    height: 100%;
     flex: 1;
 }
 

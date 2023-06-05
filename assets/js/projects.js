@@ -71,7 +71,22 @@ carousel.addEventListener('wheel', function (event) {
     }
 });
 
-
+window.addEventListener('DOMContentLoaded', function() {
+    var carouselCell = document.querySelector('.carousel__cell');
+    
+    if (carouselCell) {
+        var rect = carouselCell.getBoundingClientRect();
+        var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+        var scrollPosition = rect.top + window.pageYOffset - (windowHeight / 2);
+        
+        if (scrollPosition > 0) {
+            window.scrollTo({
+                top: scrollPosition + rect.height + rect.height,
+                behavior: 'smooth'
+            });
+        }
+    }
+});
 
 
 // function replace() {

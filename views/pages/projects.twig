@@ -6,17 +6,22 @@
 {% block main %}
 	<div class="carousel-body">
 		<div class="carousel">
-			<div class="carousel__scene">
+			<div class="carousel__scene" {% if projectCount >= 1 and projectCount <= 15 %} style = "top: -22vh" {% elseif projectCount > 15 and projectCount < 20 %} style = "top: -12vh" {% else %} style = "top: -8vh"{% endif %}>
 				<div class="carousel__list">
+                <p>{{projects.project}}</p>
 					{% for project in projects %}
 						<div class="carousel__cell">
 							<div class="datas">
-								<p>titre: {{project.title}}</p>
-								<p>lien: {{project.url}}</p>
-								<p>lien github: {{project.gitUrl}}</p>
+								<p>titre:
+									{{project.title}}</p>
+								<p>lien:
+									{{project.url}}</p>
+								<p>lien github:
+									{{project.gitUrl}}</p>
 							</div>
 							<div class="description">
-								<p>description: {{project.description}}</p>
+								<p>description:
+									{{project.description}}</p>
 							</div>
 							<div class="tech">
 								{% for tech in [project.techOne, project.techTwo, project.techThree, project.techFour] %}
@@ -33,9 +38,9 @@
 									{% endif %}
 								{% endfor %}
 								{# <p>{{project.techOne}}</p>
-																																																								<p>{{project.techTwo}}</p>
-																																																								<p>{{project.techThree}}</p>
-																																																								<p>{{project.techFour}}</p> #}
+																																																																<p>{{project.techTwo}}</p>
+																																																																<p>{{project.techThree}}</p>
+																																																																<p>{{project.techFour}}</p> #}
 							</div>
 							<img src="/uploads/{{project.image}}">
 						</div>
@@ -46,9 +51,9 @@
 				</div>
 			</div>
 			{# <div class="carousel__controls">
-																									<button class="previous-button">&#x1F446;&#x1F3FB;</button>
-																									<button class="next-button">&#x1F447;&#x1F3FB;</button>
-																								</div> #}
+																												<button class="previous-button">&#x1F446;&#x1F3FB;</button>
+																												<button class="next-button">&#x1F447;&#x1F3FB;</button>
+																											</div> #}
 		</div>
 	</div>
 {% endblock %}
