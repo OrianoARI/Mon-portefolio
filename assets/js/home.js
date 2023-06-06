@@ -19,15 +19,15 @@ audio.addEventListener("ended", function () {
 });
 
 audio.addEventListener("play", function () {
-   isAudioPlaying = true;
-   lockText.classList.replace('fa-volume-xmark','fa-volume-high')
-   
+    isAudioPlaying = true;
+    lockText.classList.replace('fa-volume-xmark', 'fa-volume-high')
+
 });
 
 audio.addEventListener("pause", function () {
     isAudioPlaying = false;
-    lockText.classList.replace('fa-volume-high','fa-volume-xmark')
- });
+    lockText.classList.replace('fa-volume-high', 'fa-volume-xmark')
+});
 
 
 loadingCircles.addEventListener("click", () => {
@@ -58,7 +58,47 @@ function reverse() {
 
 let leftFront = document.querySelector(".left-front");
 let rightFront = document.querySelector(".right-front");
+let hey = document.querySelector(".hey");
+
+
+
+function scrollDown() {
+    leftFront.style.transition = "2000ms";
+    leftFront.style.transform = "translateX(-80%)";
+    rightFront.style.transition = "2000ms";
+    rightFront.style.transform = "translateX(80%)";
+    hey.style.transition = "2000ms";
+    hey.style.top = "30%";
+}
+
+function scrollUp() {
+    leftFront.style.transition = "2000ms";
+    leftFront.style.transform = "translateX(0%)";
+    rightFront.style.transition = "2000ms";
+    rightFront.style.transform = "translate(0%)";
+    hey.style.transition = "2000ms";
+    hey.style.top = "100%";
+}
+
+
+
+window.addEventListener('wheel', function (event) {
+
+
+    if (event.deltaY < 0) {
+        // Scroll up
+        scrollUp();
+
+        
+    } else {
+        // Scroll down
+        scrollDown();
+        
+    }
+});
 
 
 
 
+
+// Appel de la fonction showLetters pour chaque élément avec la classe "text"

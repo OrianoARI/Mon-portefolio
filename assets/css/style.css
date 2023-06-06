@@ -83,6 +83,11 @@ button:focus {
     box-shadow: 0 0 0 2em transparent;
 }
 
+.face img {
+    width: 200px;
+    height: 200px;
+}
+
 @keyframes pulse {
     0% {
         box-shadow: 0 0 0 0 var(--hover);
@@ -105,6 +110,7 @@ button:focus {
     align-items: start;
     margin-top: 20px;
     margin-bottom: 20px;
+    z-index: 4;
 }
 
 #menuBurger {
@@ -156,7 +162,8 @@ button:focus {
 .side-menu {
     position: relative;
     margin: 0;
-    height: 20vh;
+    height: 30vh;
+    width: 180px;
     display: flex;
     text-align: center;
     background-color: transparent;
@@ -164,15 +171,33 @@ button:focus {
 }
 
 .side-menu ul {
-    padding: 5px;
+    padding: 20px;
     display: flex;
+    flex-direction: column;
     margin: 5px;
 }
 
 .side-menu li {
     list-style-type: none;
-    line-height: 10px;
+    line-height: 20px;
     margin: 10px;
+}
+
+.side-menu a {
+    font-family: cybernuk, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #fff6a9;
+}
+
+.side-menu a:hover {
+    font-family: cybernuk, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #fff6a9;
+    text-shadow: 0 0 5px #b208af, 0 0 15px #b208af, 0 0 20px #b208af, 0 0 40px #b208af, 0 0 60px #ff009d, 0 0 10px #ff00d9, 0 0 98px #ff0000;
+}
+
+.side-menu a:active {
+    font-family: cybernuk, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #fff6a9;
+    text-shadow: 0 0 5px #b208af, 0 0 15px #b208af, 0 0 20px #b208af, 0 0 40px #b208af, 0 0 60px #ff009d, 0 0 10px #ff00d9, 0 0 98px #ff0000;
 }
 
 /*================================================================*/
@@ -218,6 +243,7 @@ header {
         padding: 0;
     }
 
+
     .nav li {
         list-style-type: none;
 
@@ -227,9 +253,6 @@ header {
         text-decoration: none;
         font-family: cyberway;
         font-size: calc(5vh);
-        /*   text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
-              0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092;
-            color: #fccaff; */
         text-shadow: 0 0 5px #b208af, 0 0 15px #b208af, 0 0 20px #b208af, 0 0 40px #b208af, 0 0 60px #ff009d, 0 0 10px #ff00d9, 0 0 98px #ff0000;
         color: #fff6a9;
         font-size: 50px;
@@ -244,6 +267,7 @@ header {
         color: #fff6a9;
         padding: 10px 0;
     }
+    
 
     .nav li a:after {
         content: '';
@@ -260,6 +284,8 @@ header {
     .nav li a:hover:after {
         width: 100%;
     }
+
+    
 
 
     @-webkit-keyframes blink {
@@ -330,5 +356,6 @@ header {
         background-size: contain;
         background-repeat: no-repeat;
     }
+    
 
 }

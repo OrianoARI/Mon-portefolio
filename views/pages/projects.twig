@@ -6,22 +6,18 @@
 {% block main %}
 	<div class="carousel-body">
 		<div class="carousel">
-			<div class="carousel__scene" {% if projectCount >= 1 and projectCount <= 15 %} style = "top: -22vh" {% elseif projectCount > 15 and projectCount < 20 %} style = "top: -12vh" {% else %} style = "top: -8vh"{% endif %}>
+			<div class="carousel__scene" {% if projectCount >= 1 and projectCount <= 15 %} style = "top: -22vh" {% elseif projectCount > 15 and projectCount < 20 %} style = "top: -10vh" {% else %} style = "top: -8vh"{% endif %}>
 				<div class="carousel__list">
                 <p>{{projects.project}}</p>
 					{% for project in projects %}
 						<div class="carousel__cell">
 							<div class="datas">
-								<p>titre:
-									{{project.title}}</p>
-								<p>lien:
-									{{project.url}}</p>
-								<p>lien github:
-									{{project.gitUrl}}</p>
+								<p><strong>Titre:</strong> {{project.title}}</p>
+								<p onclick="window.location.href='{{project.url}}'"><strong>Lien:</strong> {{project.url}}</p>
+								<p onclick="window.location.href='{{project.gitUrl}}'"><strong>Lien:</strong> {{project.gitUrl}}</p>
 							</div>
 							<div class="description">
-								<p>description:
-									{{project.description}}</p>
+								<p> <strong>Description:</strong> {{project.description}}</p>
 							</div>
 							<div class="tech">
 								{% for tech in [project.techOne, project.techTwo, project.techThree, project.techFour] %}

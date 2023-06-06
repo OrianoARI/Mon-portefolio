@@ -58,20 +58,6 @@ input:focus {
     box-shadow: 0 0 5px #b208af, 0 0 15px #b208af, 0 0 20px #b208af, 0 0 40px #b208af, 0 0 60px #ff009d, 0 0 10px #ff00d9, 0 0 98px #ff0000;
 }
 
-/* textarea {
-    margin: auto;
-    padding: 5px;
-    border-radius: 10px;
-    width: 500px;
-    height: 20px;
-} */
-/* 
-textarea:focus {
-    background-color: rgb(74, 209, 209);
-    outline-offset: 2px;
-    outline-color: rgb(33, 134, 134);
-} */
-
 
 .display {
     display: flex;
@@ -210,5 +196,25 @@ thead {
 
     100% {
         opacity: 1;
+    }
+}
+
+
+@media (max-width: 920px) {
+
+    form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+
+    input::placeholder {
+        font-style: italic;
+        font-family: Arial, Helvetica, sans-serif;
+        color:#fff6a9;
+        font-family: cybernuk ;
+        font-size: 10px;
     }
 }

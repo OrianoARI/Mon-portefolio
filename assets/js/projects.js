@@ -41,11 +41,6 @@ function selectNext() {
     rotateCarousel();
 }
 
-// var prevButton = document.querySelector('.previous-button');
-// prevButton.addEventListener('click', selectPrev);
-
-// var nextButton = document.querySelector('.next-button');
-// nextButton.addEventListener('click', selectNext);
 
 function initCarousel() {
     for (let i = 0; i < cells.length; i++) {

@@ -6,23 +6,110 @@
 {% block head %}
 	<title>Home</title>
 {% endblock %}
-
-
-{% block main %}
-	<main>
-		<div class="loading-circle">
-			<img id="circleOne" src="/img/circle-one.png" alt="">
-			<img id="circleTwo" src="/img/circle-two.png" alt="">
-			<i id="lockText" class="fa-solid fa-volume-xmark fa-xl" style="color: #fff6a9;"></i>
+{% block header %}
+	<header class="home-header">
+		<div class="hidden"></div>
+		<div class="responsive">
+			<div class="menu-container">
+				<div class="side-menu">
+					<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="/about-me">A propose de moi</a></li>
+					<li><a href="/projects">Projets</a></li>
+					{# {% if admin.userId %} #}
+				<li>
+					<a href="/dashboard">Dashboard</a>
+				</li>
+			{# {% endif %} #}
+				</ul>
+				</div>
+				<div id="menuBurger" class="closed">
+					<span class="burger" id="burgerOne"></span>
+					<span class="burger" id="burgerTwo"></span>
+					<span class="burger" id="burgerThree"></span>
+				</div>
+			</div>
 		</div>
+
+		<nav class="nav">
+			<ul>
+				<li>
+					<a href="/">Home</a>
+				</li>
+				<li>
+					<a href="/about-me">A propos de moi</a>
+				</li>
+				<li>
+					<a href="/projects">Projets</a>
+				</li>
+				{# {% if admin.userId %} #}
+				<li>
+					<a href="/dashboard">Dashboard</a>
+				</li>
+				{# {% endif %} #}
+			</ul>
+		</nav>
+	</div>
+</header>{% endblock %}{% block main %}
+<main>
+	<div class="loading-circle">
+		<img id="circleOne" src="/img/circle-one.png" alt="">
+		<img id="circleTwo" src="/img/circle-two.png" alt="">
+		<i id="lockText" class="fa-solid fa-volume-xmark fa-xl" style="color: #fff6a9;"></i>
+	</div>
+	<div class="presentation">
 		<div class="front">
 			<div class="left-front"></div>
 			<div class="right-front"></div>
 		</div>
-	</main>
-{% endblock %}
-
-
-{% block scriptJs %}
-	<script src="js/home.js"></script>
-{% endblock %}
+		<div class="scroll">
+			<img class="mouse" src="./img/scroll-mini.png">
+		</div>
+		<div class="hey">
+			<h2>A propos de moi</h2>
+			<p class='text'>
+				Bienvenue sur mon portfolio choom !
+				<br>
+				Je m'appelle Oriano Andreoli et je suis développeur WEB.
+				<br>
+				Plongez dans cet'univers cyberpunk captivant où le futur rencontre la technologie.
+				<br>
+				Je vous invite à découvrir mon porte folio.
+			</p>
+			<div class="techno-bar">
+			<img src="./img/html.png" alt="html">
+			<img src="./img/css.png" alt="css">
+			<img src="./img/js.png" alt="js">
+			<img src="./img/node.png" alt="node">
+			<img src="./img/twig.png" alt="twig">
+			<img src="./img/php.png" alt="php">
+			<img src="./img/wordpress.png" alt="wordpress">
+			</div>
+			<img src="" alt="">
+		</div>
+		<div class="hey-two">
+			<h2>A propos de moi</h2>
+			<p class='text'>
+				Bienvenue sur mon portfolio choom !
+				<br>
+				Je m'appelle Oriano Andreoli et je suis développeur WEB.
+				<br>
+				Plongez dans cet'univers cyberpunk captivant où le futur rencontre la technologie.
+				<br>
+				Je vous invite à découvrir mon porte folio.
+			</p>
+			<div class="techno-bar">
+			<img src="./img/html.png" alt="html">
+			<img src="./img/css.png" alt="css">
+			<img src="./img/js.png" alt="js">
+			<img src="./img/node.png" alt="node">
+			<img src="./img/twig.png" alt="twig">
+			<img src="./img/php.png" alt="php">
+			<img src="./img/wordpress.png" alt="wordpress">
+			</div>
+			<img src="" alt="">
+		</div>
+	</div>
+	
+</main>{% endblock %}{% block scriptJs %}
+<script src="js/home.js"></script>{% endblock %}

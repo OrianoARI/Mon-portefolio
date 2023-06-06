@@ -4,9 +4,20 @@ const projectModel = require('../models/projectModel');
 const userModel = require('../models/userModel');
 const authguard = require('../services/authguard');
 
+
+//affiche la page home
 userRouter.get('/', async (req, res) => {
     try {
         res.render('pages/home.twig');
+    } catch (err) {
+        res.send(err);
+    }
+});
+
+//affiche la page about-me
+userRouter.get('/about-me', async (req, res) => {
+    try {
+        res.render('pages/about-me.twig');
     } catch (err) {
         res.send(err);
     }

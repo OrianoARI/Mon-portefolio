@@ -4,6 +4,14 @@ body {
     text-align: center;
 }
 
+header a {
+    z-index: 2;
+}
+
+strong {
+    text-decoration: underline;
+}
+
 .carousel-body {
     display: flex;
     flex-direction: column;
