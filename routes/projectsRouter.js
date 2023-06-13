@@ -18,6 +18,7 @@ projectRouter.get('/projects', async (req, res) => {
             projectCount: projectsCounter
         });
     } catch (error) {
+        console.log(error);
         res.send(error);
     }
 });
