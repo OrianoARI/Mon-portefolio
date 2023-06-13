@@ -68,7 +68,7 @@ function scrollDown() {
     rightFront.style.transition = "2000ms";
     rightFront.style.transform = "translateX(80%)";
     hey.style.transition = "2000ms";
-    hey.style.top = "30%";
+    hey.style.top = "20%";
 }
 
 function scrollUp() {

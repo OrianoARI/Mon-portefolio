@@ -5,6 +5,9 @@ const userModel = require('../models/userModel');
 const authguard = require('../services/authguard');
 
 
+//faire une route de déconnexion
+
+
 //affiche la page home
 userRouter.get('/', async (req, res) => {
     try {

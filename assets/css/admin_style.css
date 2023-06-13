@@ -102,46 +102,6 @@ input:focus {
 }
 
 
-thead {
-    display: flex;
-    justify-content: center;
-}
-
-.title {
-    display: flex;
-    justify-content: center;
-}
-
-.title th {
-    display: flex;
-    justify-content: center;
-    width: 15vw;
-}
-
-.project-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-.project {
-    display: flex;
-}
-
-.project p {
-    display: flex;
-    /* align-items: center;
-    justify-content: center; */
-    width: 15vw;
-}
-
-.date {
-    padding-left: 30px;
-}
-
-
-
 #update {
     --color: #ffa260;
     --hover: #ff0bce;
@@ -173,10 +133,16 @@ thead {
 
 .text {
     visibility: hidden;
-    white-space: nowrap;
+    /* white-space: nowrap; */
+    word-wrap: break-word;
     overflow: hidden;
     margin: 5px;
     text-align: center;
+}
+
+.link:hover {
+    font-style: italic;
+    color: #91007b;
 }
 
 .letter {
@@ -217,4 +183,18 @@ thead {
         font-family: cybernuk ;
         font-size: 10px;
     }
+}
+
+.bilboard td,
+.bilboard th {
+  width: 20%;
+}
+
+
+@media (max-width: 920px) {
+
+    .button-bar {
+        flex-direction: column;
+    }
+
 }

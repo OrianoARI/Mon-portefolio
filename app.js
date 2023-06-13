@@ -20,6 +20,7 @@ app.use(session({
 }));
 app.use(function (req, res, next) {//récupère la cession utilisateur si connecté sur toutes les pages
     res.locals.admin = req.session
+
     next()
 })
 

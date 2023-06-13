@@ -52,14 +52,21 @@
 			<tbody>
 				{% for project in projects %}
 					<tr class="project-container">
-						<td>
-							<div class="project">
+						<div class="project">
+							<td>
 								<p class="text">{{project.title}}</p>
-								<p class="text">{{project.url}}</p>
-								<p class="text">{{project.gitUrl}}</p>
+							</td>
+							<td>
+								<p class="text link" onclick="window.location.href='{{project.url}}'">{{project.url}}</p>
+							</td>
+							<td>
+								<p class="text link" onclick="window.location.href='{{project.gitUrl}}'">{{project.gitUrl}}</p>
+							</td>
+							<td>
 								<p class="text date">{{project.date}}</p>
-							</div>
-						</td>
+							</td>
+						</div>
+
 						<td>
 							<div class="button-bar">
 								<button id="update" type="button">
@@ -77,33 +84,47 @@
 	</div>
 	<script>
 		function showLetters(className) {
-const elements = document.getElementsByClassName(className);
+  const elements = document.getElementsByClassName(className);
 
-for (let i = 0; i < elements.length; i++) {
-const element = elements[i];
-const text = element.textContent;
-element.textContent = '';
+  for (let i = 0; i < elements.length; i++) {
+    const element = elements[i];
+    const text = element.textContent;
+    element.textContent = '';
 
-for (let j = 0; j < text.length; j++) {
-const letter = document.createElement('span');
-letter.className = 'letter';
-letter.textContent = text[j] === ' ' ? '\u00A0' : text[j]; // Replace les espaces par des espaces insécables;
-element.appendChild(letter);
+    const maxWidth = element.offsetWidth; // Largeur maximale de la cellule
+
+    let line = document.createElement('div');
+    element.appendChild(line);
+
+    for (let j = 0; j < text.length; j++) {
+      const letter = document.createElement('span');
+      letter.className = 'letter';
+      letter.textContent = text[j] === ' ' ? '\u00A0' : text[j]; // Replace les espaces par des espaces insécables;
+
+      line.appendChild(letter);
+
+      // Vérifier la largeur de la ligne
+      if (line.offsetWidth > maxWidth) {
+        line.removeChild(letter); // Supprimer la lettre ajoutée
+        element.appendChild(line); // Ajouter la ligne actuelle à la cellule
+
+        line = document.createElement('div'); // Créer une nouvelle ligne
+        line.appendChild(letter); // Ajouter la lettre à la nouvelle ligne
+        element.appendChild(line); // Ajouter la nouvelle ligne à la cellule
+      }
+    }
+
+    const letters = element.getElementsByClassName('letter');
+    let delay = 100; // Délai entre chaque lettre (100 ms dans cet exemple)
+
+    for (let k = 0; k < letters.length; k++) {
+      setTimeout(() => {
+        letters[k].style.visibility = 'visible';
+      }, delay);
+      delay += 100; // Augmentez le délai pour chaque lettre (100 ms dans cet exemple)
+    }
+  }
 }
-
-const letters = element.getElementsByClassName('letter');
-let delay = 100; // Délai entre chaque lettre (100 ms dans cet exemple)
-
-for (let k = 0; k < letters.length; k++) {
-setTimeout(() => {
-letters[k].style.visibility = 'visible';
-}, delay);
-delay += 100; // Augmentez le délai pour chaque lettre (100 ms dans cet exemple)
-}
-}
-}
-
-// Appel de la fonction showLetters pour chaque élément avec la classe "text"
 showLetters('text');
 	</script>
 	{% if project %}

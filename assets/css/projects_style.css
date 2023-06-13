@@ -81,6 +81,11 @@ strong {
     /*filter: blur(2px);*/
 }
 
+.link:hover {
+    font-style: italic;
+    color: #ff03d9;
+}
+
 .tech {
     display: flex;
     height: 100%;
@@ -160,3 +165,46 @@ strong {
 .carousel__cell:nth-child(9) {
     transform: rotateX(320deg) translateZ(500px);
 }
+
+
+@media (max-width: 1200px) {
+    .carousel__cell {
+        flex-direction: column;
+    }
+
+    .carousel__cell::before {
+        display: none;
+    }
+
+    .datas {
+        display: flex;
+        align-items: flex-start;
+    }
+
+
+}
+
+@media (max-width: 920px) {
+  
+    .carousel__cell {
+        left: 0%;
+    }
+
+
+}
+
+@media (max-width: 690px) {
+    .carousel__cell img {
+        display: none;
+    }
+
+    .carousel__cell {
+        font-size: 14px;
+    }
+
+
+
+
+}
+
+
