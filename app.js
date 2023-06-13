@@ -28,18 +28,25 @@ app.use(function (req, res, next) {//récupère la cession utilisateur si connec
 app.use(projectRouter);
 app.use(userRouter);
 
-
-app.listen(process.env.PORT, (err) => {
-    if (err) {
-        console.log(err);
-    } else {
-        console.log(`Connecté au port: ${process.env.PORT}`);
+const start = async () => {
+    
+    if (!process.env.DB_URI) {
+        throw new Error('auth DB_URI must be defined');
     }
-});
+    try {
+        await mongoose.connect(process.env.DB_URI, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        });
+        console.log('Server connected to MongoDb!');
+    } catch (err) {
+       
+        console.error(err);
+    }
 
-try {
-    mongoose.connect(process.env.DB_URI)
-    console.log("Connecté à la base de données");
-} catch (error) {
-    console.log(error);
-}
+    const PORT = process.env.SERVER_PORT;
+    app.listen(PORT, () => {
+        console.log(`Server is listening on ${process.env.PORT}!!!!!!!!!`);
+    });
+};
+start()
