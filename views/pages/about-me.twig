@@ -8,8 +8,9 @@
 {% endblock %}
 {% block main %}
 	<main>
-		<div class="about-me">
-			<h2>Recherché: Oriano Andreoli - développeur WEB et WEB mobile</h2>
+	div
+		<section class="about-me">
+			<h2>WANTED: Oriano Andreoli - Développeur WEB</h2>
 			<div class="presentation">
 				<img class="face" src="./img/wanted-face.jpg" alt="Oriano Andreoli">
 				<p>
@@ -19,15 +20,20 @@
 					<br>
 					Mon parcours militaire m'a inculqué des valeurs fondamentales telles que la rigueur, le leadership et la résolution de problèmes. Ces compétences transposables sont des atouts précieux dans le domaine du développement web, où la rigueur, l'organisation et la capacité à travailler sous pression sont essentielles.
 					<br>
-					En tant que développeur web, je suis spécialisé dans la création d'applications ett de sites web interactifs, intuitifs et esthétiques. Je suis constamment à l'affût des dernières tendances et technologies pour fournir des solutions innovantes.
-					<br>
-					Dans mon portfolio, vous trouverez une sélection de mes projets précédents qui mettent en valeur ma maîtrise des langages de programmation, ma créativité et ma capacité à résoudre des problèmes complexes. Chaque projet est le résultat d'une combinaison de compétences techniques et d'une vision artistique.
-					<br>
-					Je suis ouvert aux opportunités de collaboration et de projet, que ce soit pour le développement d'un site web, la création d'une application web ou pour toute autre demande liée au développement web. N'hésitez pas à me contacter pour discuter de vos idées et de la manière dont je peux vous aider à réaliser vos projets.
-					<br>
-					Merci de visiter mon portfolio et j'espère avoir l'occasion de travailler avec vous !
+					Merci de visiter mon portfolio et n'hésitez pas à mon contacter via le formulaire de contact!
 				</p>
-			</div>
-		</div>
+			</div>	
+		</section>
+		<section class="techno">
+		<h2>Technos et compétences</h2>
+		<img class="slide-right" src="./img/cyberpunk-car-1.png" alt="">
+		<img class="slide-left" src="./img/cyberpunk-car-2.png" alt="">
+		
+		</section>
 	</main>
+	{% block scriptJs %}
+	<script src="/js/about.js"></script>
+	
+{% endblock %}
+
 {% endblock %}

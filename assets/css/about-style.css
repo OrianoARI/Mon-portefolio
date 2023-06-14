@@ -9,8 +9,12 @@ body {
 
 main {
     display: flex;
+    flex-direction: column;
     width: 100%;
+    background: rgb(27,2,20);
+    background: linear-gradient(180deg, rgba(27,2,20,1) 0%, rgba(121,9,90,1) 0%, rgba(0,0,0,1) 0%, rgba(134,35,104,1) 55%, rgba(0,0,0,1) 97%);
 }
+
 
 h2 {
     margin-top: 10vh;
@@ -22,8 +26,8 @@ h2 {
 }
 
 p {
-    margin: 20px;
-    line-height: 40px;
+    margin: 30px;
+    line-height: 50px;
     text-align: left;
     font-family: cybernuk, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 30px;
@@ -38,12 +42,28 @@ p {
     justify-content: center;
 }
 
+.techno {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.techno img {
+    margin: 0;
+    width: 60%;
+    margin: 30px;
+}
+
 
 img {
     border-radius: 10px;
     margin: 30px;
     float: left;
 }
+
+
+
 
 
 @media (max-width: 920px) {
@@ -60,7 +80,7 @@ img {
 
     img {
         border-radius: 10px;
-        width: 80%;
+        width: 60%;
     }
 
 
