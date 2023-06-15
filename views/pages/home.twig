@@ -8,20 +8,26 @@
 {% endblock %}
 {% block header %}
 	<header class="home-header">
-		<div class="hidden"></div>
+		<div class="in"></div>
 		<div class="responsive">
 			<div class="menu-container">
 				<div class="side-menu">
 					<ul>
-					<li><a href="/">Home</a></li>
-					<li><a href="/about-me">A propose de moi</a></li>
-					<li><a href="/projects">Projets</a></li>
-					{% if admin.userId %}
-				<li>
-					<a href="/dashboard">Dashboard</a>
-				</li>
-			{% endif %}
-				</ul>
+						<li>
+							<a href="/">Home</a>
+						</li>
+						<li>
+							<a href="/about-me">A propose de moi</a>
+						</li>
+						<li>
+							<a href="/projects">Projets</a>
+						</li>
+						{% if admin.userId %}
+							<li>
+								<a href="/dashboard">Dashboard</a>
+							</li>
+						{% endif %}
+					</ul>
 				</div>
 				<div id="menuBurger" class="closed">
 					<span class="burger" id="burgerOne"></span>
@@ -43,9 +49,9 @@
 					<a href="/projects">Projets</a>
 				</li>
 				{% if admin.userId %}
-				<li>
-					<a href="/dashboard">Dashboard</a>
-				</li>
+					<li>
+						<a href="/dashboard">Dashboard</a>
+					</li>
 				{% endif %}
 			</ul>
 		</nav>
@@ -66,7 +72,7 @@
 			<img class="mouse" src="./img/scroll-mini.png">
 		</div>
 		<div class="hey">
-			<h2>A propos de moi</h2>
+			<h2>Développeur WEB</h2>
 			<p class='text'>
 				Bienvenue sur mon portfolio choom !
 				<br>
@@ -74,21 +80,14 @@
 				<br>
 				Plongez dans cet'univers cyberpunk captivant où le futur rencontre la technologie.
 				<br>
-				Je vous invite à découvrir mon porte folio.
+				N'hésitez pas à me concter!
 			</p>
-			<div class="techno-bar">
-			<img src="./img/html.png" alt="html">
-			<img src="./img/css.png" alt="css">
-			<img src="./img/js.png" alt="js">
-			<img src="./img/node.png" alt="node">
-			<img src="./img/twig.png" alt="twig">
-			<img src="./img/php.png" alt="php">
-			<img src="./img/wordpress.png" alt="wordpress">
-			</div>
-			<img src="" alt="">
+			<button class="btn open glowing-btn">
+				<span class="glowing-text">Con<span class="faulty-letter">ta</span>ct<span class="faulty-letter">ez-</span>moi</span>
+			</button>
 		</div>
 		<div class="hey-two">
-			<h2>A propos de moi</h2>
+			<h2>Développeur WEB</h2>
 			<p class='text'>
 				Bienvenue sur mon portfolio choom !
 				<br>
@@ -96,20 +95,20 @@
 				<br>
 				Plongez dans cet'univers cyberpunk captivant où le futur rencontre la technologie.
 				<br>
-				Je vous invite à découvrir mon porte folio.
+				N'hésitez pas à me concter!
 			</p>
-			<div class="techno-bar">
-			<img src="./img/html.png" alt="html">
-			<img src="./img/css.png" alt="css">
-			<img src="./img/js.png" alt="js">
-			<img src="./img/node.png" alt="node">
-			<img src="./img/twig.png" alt="twig">
-			<img src="./img/php.png" alt="php">
-			<img src="./img/wordpress.png" alt="wordpress">
-			</div>
-			<img src="" alt="">
+			<button class="btn open glowing-btn">
+				<span class="glowing-text">Con<span class="faulty-letter">ta</span>ct<span class="faulty-letter">ez-</span>moi</span>
+			</button>
 		</div>
 	</div>
-	
+	<div class="mail-message clicable">
+		{% if mailError %}
+			<p>{{mailError}}</p><i class="fa-solid fa-rectangle-xmark fa-2xl close-message" style="color: #f005e8;"></i>
+		{% elseif mailSuccess %}
+			<p>{{mailSuccess}}</p><i class="fa-solid fa-rectangle-xmark fa-2xl close-message" style="color: #f005e8;"></i>
+		{% endif %}
+	</div>
 </main>{% endblock %}{% block scriptJs %}
+<script src="js/mail.js"></script>
 <script src="js/home.js"></script>{% endblock %}

@@ -1,9 +1,17 @@
 html {
     height: 100vh;
     overflow: hidden;
+    height: 100vh;
+    cursor: url("../ico/Awesome\ Gun.cur"), grabbing;
+}
+
+
+a:hover, button:hover{
+    cursor: url("../ico/Crosshair\ purple\ lens.cur"), grabbing;
 }
 
 body {
+    overflow: hidden;
     background-image: url("../img/city-skyline.avif");
     background-size: cover;
     background-repeat: no-repeat;
@@ -11,6 +19,7 @@ body {
 }
 
 main {
+    overflow: hidden;
     display: flex;
 }
 
@@ -21,6 +30,27 @@ main {
     align-items: start;
 }
 
+.mail-message {
+    position: fixed;
+    display: flex;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);  
+    margin: 30px;
+    text-align: center;
+    z-index: 2;
+}
+
+.mail-message p {
+    text-shadow: 0 0 5px #b208af, 0 0 15px #b208af, 0 0 20px #b208af, 0 0 40px #b208af, 0 0 60px #ff009d, 0 0 10px #ff00d9, 0 0 98px #ff0000;
+    color: #fff6a9;
+    font-size: 50px;
+    font-family: cybernuk; 
+}
+
+.hidden {
+    display: none;
+}
 
 .front {
     display: flex;
@@ -94,6 +124,8 @@ background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(27,2,20,1) 16%, rgba(
     -ms-animation: jump 2s linear 0s infinite normal;
     animation: jump 2s linear 0s infinite normal;
 }
+
+
 
 @-webkit-keyframes jump {
     0% {
@@ -206,7 +238,7 @@ background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(27,2,20,1) 16%, rgba(
 
 @media (max-width: 920px) {
 
-    html {
+    html, body, main {
         overflow: visible;
     }
 
@@ -235,7 +267,7 @@ background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(27,2,20,1) 16%, rgba(
         box-shadow: 0 0 5px #b208af, 0 0 15px #b208af, 0 0 20px #b208af, 0 0 40px #b208af, 0 0 60px #ff009d, 0 0 10px #ff00d9, 0 0 98px #ff0000;
         border-radius: 20px;
         padding: 20px;
-        margin: 5%;
+        margin-left: 10%;
         text-shadow: 0 0 5px #b208af, 0 0 15px #b208af, 0 0 20px #b208af, 0 0 40px #b208af, 0 0 60px #ff009d, 0 0 10px #ff00d9, 0 0 98px #ff0000;
         color: #fff6a9;
         font-size: 20px;
@@ -248,4 +280,16 @@ background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(27,2,20,1) 16%, rgba(
     .presentation {
         margin-top: 20%;
     }
+}
+
+@media (max-width: 520px){
+
+.glowing-btn {
+    word-break: break-word;
+font-size: 15px;
+
+}
+
+
+
 }

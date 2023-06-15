@@ -1,5 +1,10 @@
 html {
     height: 100vh;
+    cursor: url("../ico/Awesome\ Gun.cur"), grabbing;
+}
+
+a:hover, button:hover{
+    cursor: url("../ico/Crosshair\ purple\ lens.cur"), grabbing;
 }
 
 body {
@@ -16,21 +21,23 @@ main {
 }
 
 
+
+
 h2 {
-    margin-top: 10vh;
+    margin-top: 5vh;
     text-align: center;
     font-family: cybernuk, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 5vh;
+    font-size: 40px;
     text-shadow: 0 0 5px #b208af, 0 0 15px #b208af, 0 0 20px #b208af, 0 0 40px #b208af, 0 0 60px #ff009d, 0 0 10px #ff00d9, 0 0 98px #ff0000;
     color: #fff6a9;
 }
 
 p {
-    margin: 30px;
-    line-height: 50px;
-    text-align: left;
+    margin: 50px 50px 0 50px;
+    line-height: 70px;
+    text-align: justify;
     font-family: cybernuk, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 30px;
+    font-size: 20px;
     text-shadow: 0 0 2px #b208af, 0 0 5px #b208af, 0 0 8px #b208af, 0 0 10px #b208af, 0 0 12px #ff009d, 0 0 10px #ff00d9, 0 0 98px #ff0000;
     color: #fff6a9;
 }
@@ -58,9 +65,12 @@ p {
 
 img {
     border-radius: 10px;
-    margin: 30px;
     float: left;
+    margin-top: 50px;
+    margin-right: 20px;
+    margin-left: 70px;
 }
+
 
 
 

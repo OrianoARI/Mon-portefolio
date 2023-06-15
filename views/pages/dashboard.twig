@@ -21,12 +21,12 @@
 			<input type="text" name="techTwo" id="techTwo" placeholder="Techno utilisée" {% if project %} value="{{project.techTwo}}" {% endif %}>
 			<input type="text" name="techThree" id="techThree" placeholder="Techno utilisée" {% if project %} value="{{project.techThree}}" {% endif %}>
 			<input type="text" name="techFour" id="techFour" placeholder="Techno utilisée" {% if project %} value="{{project.techFour}}" {% endif %}>
-			<input type="file" name="image" id="image" {% if project %} value="{{project.image}}" {% endif %}>
+			<input class="clicable" type="file" name="image" id="image" {% if project %} value="{{project.image}}" {% endif %}>
 			<div class="button-bar">
 				{% if project %}
-					<button class="btn" type="submit" id="updateBtn">Save</button>
+					<button class="btn" type="submit" id="updateBtn">Enregistrer</button>
 				{% else %}
-					<button class="btn" type="submit" id="addBtn">Add</button>
+					<button class="btn" type="submit" id="addBtn">Ajouter</button>
 				{% endif %}
 				{% if project %}
 					<button class="btn" type="button" id="cancelBtn">Annuler</button>
@@ -73,7 +73,7 @@
 									<a href="updateProject/{{project.id}}">Update</a>
 								</button>
 								<button id="delete" type="button">
-									<a href="deleteProject/{{project.id}}">Delete</a>
+									<a href="deleteProject/{{project.id}}">Supprimer</a>
 								</button>
 							</div>
 						</td>

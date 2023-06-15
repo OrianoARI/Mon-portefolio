@@ -80,10 +80,12 @@ function scrollUp() {
     hey.style.top = "100%";
 }
 
-
+let mailModal = document.querySelector(".modal");
 
 window.addEventListener('wheel', function (event) {
-
+    if (modal.classList.contains('opened')) {
+        return;
+      }
 
     if (event.deltaY < 0) {
         // Scroll up
@@ -97,8 +99,15 @@ window.addEventListener('wheel', function (event) {
     }
 });
 
+// Fermeture message de mail
 
+let closeMessage = document.querySelectorAll(".close-message");
 
+closeMessage.forEach(element => {
+    element.addEventListener("click", ()=>{
+        mailMessage.classList.add('hidden');
+    });
+});
 
 
 // Appel de la fonction showLetters pour chaque élément avec la classe "text"

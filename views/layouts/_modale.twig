@@ -1,0 +1,18 @@
+<div class="modal hidden">
+	<div class="icone">
+		<i class="fa-solid fa-rectangle-xmark fa-2xl close" style="color: #f005e8;"></i>
+	</div>
+	<h2>Formulaire de contact</h2>
+	<form action="/sendMail" method="post">
+		<input type="text" name="name" placeholder="Nom" required>
+		<input type="text" name="firstname" placeholder="Prénom" required>
+		<input type="email" name="mail" id="mail" placeholder="Adresse mail" required>
+		<input type="tel" name="tel" placeholder="Numéro de téléphone (facultati)">
+		<textarea name="message" id="message" cols="30" rows="10" placeholder="Ton message ici choom" required></textarea>
+		<div class="button-bar">
+			<button class="btn show-message" type="submit">Envoyer</button>
+			<button class="btn close" type="button">Annuler</button>
+		</div>
+	</form>
+</div>
+<div class="overlay hidden"></div>

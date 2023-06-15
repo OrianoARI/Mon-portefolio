@@ -27,13 +27,24 @@
 
 html,
 body {
+    position: relative;
     margin: 0;
     background-color: black;
-
+    cursor: url("../ico/Awesome\ Gun.cur"), grabbing;
 }
 
 
-.hidden {
+
+a:hover,
+.link:hover,
+button:hover,
+.close:hover, .clicable:hover {
+    cursor: url("../ico/Crosshair\ purple\ lens.cur"), grabbing;
+}
+
+
+
+.in {
     position: absolute;
     left: 0;
     top: 0;
@@ -202,6 +213,118 @@ button:focus {
 
 /*================================================================*/
 
+/* modal========================================================= */
+
+h2 {
+    margin-top: 5%;
+    text-align: center;
+    font-family: cybernuk, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 30px;
+    text-shadow: 0 0 5px #b208af, 0 0 15px #b208af, 0 0 20px #b208af, 0 0 40px #b208af, 0 0 60px #ff009d, 0 0 10px #ff00d9, 0 0 98px #ff0000;
+    color: #fff6a9;
+}
+
+.modal {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+    display: flex;
+    padding: 10px;
+    height: auto;
+    z-index: 4;
+}
+
+.modal form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.modal textarea {
+    width: 75%;
+}
+
+input,
+textarea {
+    font-family: cybernuk, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    margin: 10px;
+    padding: 10px;
+    width: 40vw;
+    border-radius: 20px;
+    background-color: #ff0bce;
+}
+
+
+/* Changement input avec remplissage automatique */
+input:-webkit-autofill,
+input:-moz-autofill,
+input:-ms-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset;
+    /* Change la couleur de fond */
+    -webkit-text-fill-color: #e4d65a !important;
+    /* Change la couleur du texte */
+    color: #e4d65a !important;
+    /* Couleur du texte pour les navigateurs autres que Chrome */
+}
+
+/* Forcer la couleur du texte à être visible */
+input:-webkit-autofill::first-line,
+input:-moz-autofill::first-line,
+input:-ms-autofill::first-line {
+    color: #e4d65a !important;
+    /* Couleur du texte pour la première ligne */
+}
+
+
+input::placeholder,
+textarea::placeholder {
+    font-style: italic;
+    color: #fff6a9;
+    font-family: cybernuk, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+input:focus,
+textarea:focus {
+    background-color: rgb(137, 12, 131);
+    outline-offset: 2px;
+    outline-color: rgb(107, 33, 134);
+    box-shadow: 0 0 5px #b208af, 0 0 15px #b208af, 0 0 20px #b208af, 0 0 40px #b208af, 0 0 60px #ff009d, 0 0 10px #ff00d9, 0 0 98px #ff0000;
+    color: #fff6a9;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300%;
+    background-color: rgba(0, 0, 0, 0.785);
+    z-index: 3;
+}
+
+.icone {
+    display: flex;
+    margin-left: 75%;
+
+}
+
+.hidden {
+    display: none;
+}
+
+/* modale============================================================= */
+
 header {
     background-image: url("/img/city-skyline.avif");
     background-size: contain;
@@ -219,6 +342,307 @@ header {
     color: #b208af;
 }
 
+/* ================================glowing button */
+
+:root {
+    --glow-color: #fff6a9;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+.glowing-btn {
+    position: relative;
+    color: var(--glow-color);
+    cursor: pointer;
+    padding: 0.35em 1em;
+    border: 0.15em solid var(--glow-color);
+    border-radius: 0.45em;
+    background: none;
+    perspective: 2em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    font-weight: 900;
+    letter-spacing: 1em;
+    word-break: break-word;
+
+    -webkit-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+        0px 0px 0.5em 0px var(--glow-color);
+    -moz-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+        0px 0px 0.5em 0px var(--glow-color);
+    box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+        0px 0px 0.5em 0px var(--glow-color);
+    animation: border-flicker 2s linear infinite;
+}
+
+.glowing-txt {
+    float: left;
+    margin-right: -0.8em;
+    -webkit-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+        0 0 0.45em var(--glow-color);
+    -moz-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+        0 0 0.45em var(--glow-color);
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color);
+    animation: text-flicker 3s linear infinite;
+}
+
+.faulty-letter {
+    opacity: 0.5;
+    animation: faulty-flicker 2s linear infinite;
+}
+
+.glowing-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.7;
+    filter: blur(1em);
+    transform: translateY(120%) rotateX(95deg) scale(1, 0.35);
+    background: var(--glow-color);
+    pointer-events: none;
+}
+
+.glowing-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    z-index: -1;
+    background-color: var(--glow-color);
+    box-shadow: 0 0 2em 0.2em var(--glow-color);
+    transition: opacity 100ms linear;
+}
+
+.glowing-btn:hover {
+    color: rgba(0, 0, 0, 0.8);
+    text-shadow: none;
+    animation: none;
+}
+
+.glowing-btn:hover .glowing-txt {
+    animation: none;
+}
+
+.glowing-btn:hover .faulty-letter {
+    animation: none;
+    text-shadow: none;
+    opacity: 1;
+}
+
+.glowing-btn:hover:before {
+    filter: blur(1.5em);
+    opacity: 1;
+}
+
+.glowing-btn:hover:after {
+    opacity: 1;
+}
+
+@keyframes faulty-flicker {
+    0% {
+        opacity: 0.1;
+    }
+
+    2% {
+        opacity: 0.1;
+    }
+
+    4% {
+        opacity: 0.5;
+    }
+
+    19% {
+        opacity: 0.5;
+    }
+
+    21% {
+        opacity: 0.1;
+    }
+
+    23% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 0.5;
+    }
+
+    83% {
+        opacity: 0.4;
+    }
+
+    87% {
+        opacity: 1;
+    }
+}
+
+@keyframes text-flicker {
+    0% {
+        opacity: 0.1;
+    }
+
+    2% {
+        opacity: 1;
+    }
+
+    8% {
+        opacity: 0.1;
+    }
+
+    9% {
+        opacity: 1;
+    }
+
+    12% {
+        opacity: 0.1;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 0.3;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 0.7;
+    }
+
+    72% {
+        opacity: 0.2;
+    }
+
+    77% {
+        opacity: 0.9;
+    }
+
+    100% {
+        opacity: 0.9;
+    }
+}
+
+@keyframes border-flicker {
+    0% {
+        opacity: 0.1;
+    }
+
+    2% {
+        opacity: 1;
+    }
+
+    4% {
+        opacity: 0.1;
+    }
+
+    8% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* =======================================glowing button */
+
+/* footer======================================================== */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+}
+
+footer span {
+    display: flex;
+    align-items: flex-end;
+    font-size: 16px;
+    margin: 0;
+    font-family: cybernuk, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-shadow: 0 0 2px #b208af, 0 0 5px #b208af, 0 0 8px #b208af, 0 0 10px #b208af, 0 0 12px #ff009d, 0 0 10px #ff00d9, 0 0 98px #ff0000;
+    color: #fff6a9;
+}
+
+footer nav {
+    display: flex;
+    width: 100%;
+    color: white;
+    justify-content: space-around;
+}
+
+footer ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+}
+
+footer li {
+    list-style-type: none;
+    margin: 20px;
+}
+
+footer i {
+    margin-right: 10px;
+}
+
+.social {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+footer h3 {
+    text-align: center;
+    font-size: 20px;
+    font-family: cybernuk, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-shadow: 0 0 2px #b208af, 0 0 5px #b208af, 0 0 8px #b208af, 0 0 10px #b208af, 0 0 12px #ff009d, 0 0 10px #ff00d9, 0 0 98px #ff0000;
+    color: #fff6a9;
+}
+
+.clicable, footer a {
+    font-family: cybernuk, Arial, Helvetica, sans-serif;
+    color: #fff6a9;
+    text-decoration: none;
+}
+
+.clicable:hover, footer a:hover {
+    text-shadow: 0 0 2px #b208af, 0 0 5px #b208af, 0 0 8px #b208af, 0 0 10px #b208af, 0 0 12px #ff009d, 0 0 10px #ff00d9, 0 0 98px #ff0000;
+    color: #fff6a9;
+}
+
+
+
+
+/* footer======================================================== */
 
 @media (min-width: 920px) {
 
@@ -267,7 +691,7 @@ header {
         color: #fff6a9;
         padding: 10px 0;
     }
-    
+
 
     .nav li a:after {
         content: '';
@@ -285,7 +709,7 @@ header {
         width: 100%;
     }
 
-    
+
 
 
     @-webkit-keyframes blink {
@@ -348,6 +772,15 @@ header {
         display: block;
     }
 
+    input,
+    textarea {
+        width: 80vw;
+    }
+
+    .close {
+        margin: 5px;
+    }
+
 }
 
 @media (max-width: 470px) {
@@ -356,6 +789,6 @@ header {
         background-size: contain;
         background-repeat: no-repeat;
     }
-    
+
 
 }

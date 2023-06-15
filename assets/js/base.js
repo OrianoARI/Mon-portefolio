@@ -4,7 +4,7 @@ let burgerOne = document.querySelector('#burgerOne');
 let burgerTwo = document.querySelector('#burgerTwo');
 let burgerThree = document.querySelector('#burgerThree');
 let sideMenu = document.querySelector('.side-menu');
-let logBtn = document.querySelector('.hidden')
+let logBtn = document.querySelector('.in')
 let counter = 0;
 
 
@@ -74,7 +74,7 @@ function clickCounter() {
 };
 
 logBtn.addEventListener("click", () => {
-   clickCounter()
+    clickCounter()
 });
 
 
@@ -88,17 +88,17 @@ logBtn.addEventListener("click", () => {
 //     const element = elementId;
 //     const text = element.textContent;
 //     element.textContent = '';
-  
+
 //     for (let i = 0; i < text.length; i++) {
 //       const letter = document.createElement('span');
 //       letter.className = 'letter';
 //       letter.textContent = text[i];
 //       element.appendChild(letter);
 //     }
-  
+
 //     const letters = element.getElementsByClassName('letter');
 //     let delay = 100; // Délai entre chaque lettre (100 ms dans cet exemple)
-  
+
 //     for (let i = 0; i < letters.length; i++) {
 //       setTimeout(() => {
 //         letters[i].style.visibility = 'visible';
@@ -106,6 +106,60 @@ logBtn.addEventListener("click", () => {
 //       delay += 100; // Augmentez le délai pour chaque lettre (100 ms dans cet exemple)
 //     }
 //   }
-  
+
 //   // Utilisation : Appeler la fonction showLetters avec l'ID de l'élément contenant le texte
 //   showLetters('text');
+
+//------------------------Modale-------------------------------------------------
+
+let openModale = document.querySelectorAll('.open');
+let closeModale = document.querySelectorAll('.close');
+let overlay = document.querySelector('.overlay');
+let mouse = document.querySelector('.mouse');
+let modal = document.querySelector('.modal');
+
+
+
+openModale.forEach(element => {
+    element.addEventListener('click', () => {
+        document.documentElement.style.overflow = 'hidden';
+        modal.classList.remove('hidden', 'visible');
+        modal.classList.add('opened');
+        overlay.classList.remove('hidden');
+        mouse.classList.add('hidden');
+        console.log('bobo');
+    });
+});
+
+let visible = document.querySelectorAll('.visible');
+
+
+closeModale.forEach(element => {
+    element.addEventListener('click', () => {
+        document.documentElement.style.overflow = 'visible';
+        modal.classList.add('hidden', 'visible');
+        modal.classList.remove('opened');
+        overlay.classList.add('hidden');
+        mouse.classList.remove('hidden');
+        console.log('bobobaba');
+    });
+});
+
+
+let showMessage = document.querySelector(".show-message");
+let mailMessage = document.querySelector(".mail-message")
+
+showMessage.addEventListener('click', () => {
+        mailMessage.classList.remove('hidden');
+    });
+
+
+
+
+
+
+
+
+
+
+
