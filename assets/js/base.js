@@ -9,7 +9,7 @@ let counter = 0;
 
 
 function burgerMenuClosed() {
-    burger.style.backgroundColor = "rgb(124, 0, 173)";
+    burger.style.backgroundColor = "rgb(124, 0, 173, 0.8)";
     burgerOne.style.backgroundColor = "black";
     burgerThree.style.backgroundColor = "black";
     burgerTwo.style.backgroundColor = "black";
@@ -26,7 +26,7 @@ function burgerMenuClosed() {
     menuContainer.style.left = "270px";
     burger.style.transition = "0";
     burger.style.left = "-90px";
-    sideMenu.style.backgroundColor = "rgb(124, 0, 173)";
+    sideMenu.style.backgroundColor = "rgb(124, 0, 173, 0.8)";
 }
 
 function burgerMenuOpen() {
