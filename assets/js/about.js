@@ -1,18 +1,5 @@
 ScrollReveal({ reset: true });
 
-// ScrollReveal().reveal(".slide-right", {
-//     duration: 2000,
-//     origin: "left",
-//     distance: "1000px",
-//     easing: "ease-in-out"
-//   });
-
-//   ScrollReveal().reveal(".slide-left", {
-//     duration: 2000,
-//     origin: "right",
-//     distance: "1000px",
-//     easing: "ease-in-out"
-//   });
 
 ScrollReveal().reveal(".face", {
   duration: 4000,
@@ -45,10 +32,26 @@ function scrollDown() {
 }
 
 
-window.addEventListener('wheel', function (event) {
 
+function handleScroll(event) {
   if (event.deltaY > 0) {
-    // Scroll up
+    // Scroll down
     scrollDown();
   }
+}
+// Événement de défilement avec la souris
+window.addEventListener('wheel', handleScroll);
+
+// Événement de défilement tactile sur mobile
+window.addEventListener('touchmove', function(event) {
+  // Récupérer la position de défilement vertical sur mobile
+  var touchY = event.touches[0].clientY;
+  var previousTouchY = 0;
+
+  if (touchY > previousTouchY) {
+    // Scroll down
+    scrollDown();
+  }
+
+  previousTouchY = touchY;
 });
