@@ -80,17 +80,16 @@ function scrollUp() {
     hey.style.top = "100%";
 }
 
-let mailModal = document.querySelector(".modal");
 
 window.addEventListener('wheel', function (event) {
     if (modal.classList.contains('opened')) {
         return;
-      }
-
+    }
+    
     if (event.deltaY < 0) {
         // Scroll up
         scrollUp();
-
+        
         
     } else {
         // Scroll down
@@ -100,6 +99,7 @@ window.addEventListener('wheel', function (event) {
 });
 
 // Fermeture message de mail
+let mailModal = document.querySelector(".modal");
 
 let closeMessage = document.querySelectorAll(".close-message");
 
