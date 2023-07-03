@@ -66,6 +66,25 @@ carousel.addEventListener('wheel', function (event) {
     }
 });
 
+carousel.addEventListener('touchstart', function (event) {
+    touchStartY = event.touches[0].clientY;
+});
+
+carousel.addEventListener('touchmove', function (event) {
+    event.preventDefault();
+    touchEndY = event.touches[0].clientY;
+});
+
+carousel.addEventListener('touchend', function (event) {
+    if (touchEndY < touchStartY) {
+        // Scroll up
+        selectNext();
+    } else {
+        // Scroll down
+        selectPrev();
+    }
+});
+
 window.addEventListener('DOMContentLoaded', function() {
     var carouselCell = document.querySelector('.carousel__cell');
     

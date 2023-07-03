@@ -92,9 +92,16 @@ p {
     margin-left: 70px;
 }
 
+@media (max-width: 1400px) {
 
-
-
+    .slide-left {
+        position: absolute;
+        top: 40%;
+        right: -1200px;
+        margin: 0;
+        width: 80%;
+    }
+}
 
 
 @media (max-width: 920px) {
@@ -144,13 +151,8 @@ p {
 
     }
 
-    .slide-left {
-        position: absolute;
-        top: 50%;
-        right: -1200px;
-        margin: 0;
-        width: 80%;
-    }
+
+    
     .techno img {
         margin: 0;
         width: 80%;
@@ -176,5 +178,13 @@ p {
     font-size: 16px;
 }
 
+
+.slide-left {
+    position: absolute;
+    top: 60%;
+    right: -1200px;
+    margin: 0;
+    width: 80%;
+}
 
 }

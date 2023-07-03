@@ -108,6 +108,14 @@ strong {
 .carousel__cell img {
     width: 100px;
     height: 100px;
+    margin: auto 0 auto 0;
+}
+
+.carousel .ico {
+    width: 45px;
+    height: 45px;
+    margin: 0 auto 0 auto;
+
 }
 
 .carousel__cell p {
